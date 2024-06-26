@@ -10,14 +10,14 @@ This Python script helps you create a versatile Telegram bot with ease.
 ### Installation
 
 To install the required library, run:
-``` Install
+```Install
 
 pip install pyTelegramBotAPI
 
 ```
 ## Abilities
 
-1. Upload Files: Upload files of any format (.png, .jpg, .mp3, .mp4, etc.).
+1. Upload Files: Upload files of any format (.png, .jpg, .mp3, .mp4).
 2. Button Interactions: Connect buttons to any link or trigger text callbacks.
 
 ## How to Use
