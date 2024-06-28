@@ -6,12 +6,12 @@ import telebot
 bot = telebot.TeleBot("BOT-TOKEN-ID")
 
 # Define inline keyboard buttons
-button1 = telebot.types.InlineKeyboardButton("Connection", url="https://t.me/Tomm8yy") 
-            # Put in instead "Connection" bytton name. ,  #Put in instead "Hi I'm TommY" what is you want url when touch "Connection" button.   
-button2 = telebot.types.InlineKeyboardButton("Nothing", callback_data="Nothing")
-            # Put in instead "Nothing" bytton name. 
-button3 = telebot.types.InlineKeyboardButton("TommY", callback_data="TommY")
-
+button1 = telebot.types.InlineKeyboardButton("Write our button name 1", url="https://t.me/Tomm8yy") 
+            # Put in instead "Write our button name 1" bytton name. ,  #Put in instead "Hi I'm TommY" what is you want url when touch "Connection" button.   
+button2 = telebot.types.InlineKeyboardButton("Write Your button name 2", callback_data="Write Your button name 2")
+            # Put in instead "Write our button name 2" bytton name. 
+button3 = telebot.types.InlineKeyboardButton("Write your button name 3", callback_data="Write Your button name 3")
+            # Put in instead "Write our button name 3" bytton name.
 
 # Define inline keyboard markups
 markup1 = telebot.types.InlineKeyboardMarkup(row_width=1)
@@ -25,9 +25,9 @@ key_markup1.add("created", "by", "TommY")
 # Handle callback queries
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
-    if call.data == "Nothing":  #Put in instead "Created By t.me/Tomm8yy" what is you want call back when touch "Nothing" button.
+    if call.data == "Write Your button name 2":  #Put in instead "Created By t.me/Tomm8yy" what is you want call back when touch "Write Your button name 2" button.
         bot.send_message(call.message.chat.id, "Created By t.me/Tomm8yy")
-    elif call.data == "TommY":
+    elif call.data == "Write Your button name 3":
         bot.send_message(call.message.chat.id, """
 ██████████████████████████████████
 █─▄─▄─█─▄▄─█▄─▀█▀─▄█▄─▀█▀─▄█▄─█─▄█
@@ -37,15 +37,14 @@ def callback_query(call):
 # Handle /start command
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.send_message(message.chat.id, "Hi, I'm t.me/Tomm8yy", reply_markup=key_markup1)
+    bot.send_message(message.chat.id, "Hi, I'm t.me/Tomm8yy", reply_markup=key_markup1) #Write what do you want when call "strt" cammand.
 
 
 # Handle /data command
 @bot.message_handler(commands=['data'])
 def send_data(message):
-    bot.reply_to(message, "none", reply_markup=markup1)
-
-
+    bot.reply_to(message, "Write what do you want when call data cammand.", reply_markup=markup1)
+#                         "Write what do you want when call data cammand."
 
 # Define a command handler for /sendphoto
 @bot.message_handler(commands=['sendphoto'])
@@ -101,11 +100,11 @@ def send_video(message):
 @bot.message_handler()
 def handle_message(message):
     if message.text == "created":
-        bot.send_message(message.chat.id, "Hi, I'm TommY")  #Put in instead "Hi I'm TommY" what is you want when touch
+        bot.send_message(message.chat.id, "Hi, I'm TommY")  #Put in instead "Hi I'm TommY" what is you want when touch created key_markup. 
     elif message.text == "by":
-        bot.send_message(message.chat.id, "Hi, I'm TommY")  #Put in instead "Hi I'm TommY" what is you want when touch
+        bot.send_message(message.chat.id, "Hi, I'm TommY")  #Put in instead "Hi I'm TommY" what is you want when touch bykey_markup.
     elif message.text == "TommY":
-        bot.send_message(message.chat.id, "Hi, I'm TommY")  #Put in instead "Hi I'm TommY" what is you want when touch
+        bot.send_message(message.chat.id, "Hi, I'm TommY")  #Put in instead "Hi I'm TommY" what is you want when touch TommY key_markup.
     
    
 # Start polling
