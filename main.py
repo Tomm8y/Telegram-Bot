@@ -1,4 +1,4 @@
-#Created By t.me/Tomm8yy
+# Created By t.me/Tomm8yy .
 
 import telebot
 
@@ -17,10 +17,9 @@ button3 = telebot.types.InlineKeyboardButton("Write your button name 3", callbac
 markup1 = telebot.types.InlineKeyboardMarkup(row_width=1)
 markup1.add(button1, button2, button3)
 
-
 # Define reply keyboard markups
 key_markup1 = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
-key_markup1.add("created", "by", "TommY")
+key_markup1.add("created", "by", "TommY") # Write your keyboard button name instead  "created", "by", "TommY" . 
 
 # Handle callback queries
 @bot.callback_query_handler(func=lambda call: True)
@@ -100,13 +99,13 @@ def send_video(message):
 @bot.message_handler()
 def handle_message(message):
     if message.text == "created":
-        bot.send_message(message.chat.id, "Hi, I'm TommY")  #Put in instead "Hi I'm TommY" what is you want when touch created key_markup. 
+        bot.send_message(message.chat.id, "Hi, I'm TommY")  # Put in instead "Hi I'm TommY" what is you want when touch "created" keyboard button . 
     elif message.text == "by":
-        bot.send_message(message.chat.id, "Hi, I'm TommY")  #Put in instead "Hi I'm TommY" what is you want when touch bykey_markup.
+        bot.send_message(message.chat.id, "Hi, I'm TommY")  # Put in instead "Hi I'm TommY" what is you want when touch "by" keyboard button .
     elif message.text == "TommY":
-        bot.send_message(message.chat.id, "Hi, I'm TommY")  #Put in instead "Hi I'm TommY" what is you want when touch TommY key_markup.
+        bot.send_message(message.chat.id, "Hi, I'm TommY")  # Put in instead "Hi I'm TommY" what is you want when touch "TommY" keyboard button .
     
    
 # Start polling
 bot.infinity_polling()
-#Created By TommY
+# Created By TommY.
